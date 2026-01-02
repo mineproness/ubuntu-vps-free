@@ -1,4 +1,4 @@
-herename: Free RDP with 8GB RAM and Saved Storage
+name: Free RDP with 8GB RAM and Saved Storage
 
 on:
   workflow_dispatch:
