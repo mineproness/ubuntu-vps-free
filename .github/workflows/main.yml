@@ -13,7 +13,7 @@ jobs:
       GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
       RELEASE_TAG: v2.0.0
       RELEASE_TITLE: "Free RDP with 8GB RAM and Saved Storage"
-      RELEASE_NOTES:  "nd Saved Storage"s      
+      RELEASE_NOTES:  "nd Saved Storage"    
 
     steps:
       - name: Checkout repo
@@ -78,7 +78,7 @@ jobs:
         run: |
           if [ ! -f "windows.img" ]; then
              qemu-img create -f raw windows.img 25G
-             wget "https://pixeldrain.com/api/file/w2Ky3bzH" -O windows.7z
+             wget "https://pixeldrain.com/api/file/w2Ky3bzH" -O windows.7z &> /dev/null
              mkdir windows
              7z x windows.7z -owindoows
              cp windows/*/*.iso ./windows.iso
