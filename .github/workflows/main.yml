@@ -109,10 +109,9 @@ jobs:
       - name: Gracefully shutdown VM
         run: |
           set +e
-          if [ -f "/tmp/qemu-monitor.sock" ]; then
+          
             sudo socat - UNIX-CONNECT:/tmp/qemu-monitor.sock <<< "system_powerdown"
-          fi
-
+        
       - name: Compress and split image
         env: 
           PASSWORD: ${{ secrets.PASSWORD }}
